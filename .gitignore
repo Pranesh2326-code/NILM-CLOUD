@@ -1,3 +1,11 @@
-__pycache__/
+# Ignore local data logs
 *.csv
-.DS_Store
+user_data_logs/
+
+# Ignore Python system files
+__pycache__/
+*.pyc
+
+# Ignore environment settings
+.env
+venv/
