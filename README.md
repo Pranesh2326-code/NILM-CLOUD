@@ -1,5 +1,14 @@
-⚡ NILM Smart Billing System (TNEB Integrated)An IoT-based approach to Non-Intrusive Load Monitoring using Smartphone Magnetometers.📌 Project OverviewThis project presents a cost-effective, non-contact method for monitoring household energy consumption. As a final-year Electrical and Electronics Engineering (EEE) student project, it demonstrates how Digital Signal Processing (DSP) and Cloud Computing can be used to perform energy audits without the need for expensive clip-on ammeters or invasive wiring.By utilizing the Hall Effect sensor (magnetometer) inside a standard smartphone, we capture the magnetic signature of an appliance. The system then processes this "Energy Fingerprint" to calculate real-time wattage and predict monthly electricity bills based on the TNEB (Tamil Nadu Electricity Board) domestic tariff slabs.🚀 Key FeaturesNon-Intrusive Sensing: Uses a smartphone as a current probe via an IP-based sensor bridge.Hybrid Sensing Logic: Built-in auto-calibration and fallback mode to ensure system stability during network latency.AWS Cloud Integration: Syncs real-time data (Watts, Units, Bill) to Amazon DynamoDB via AWS API Gateway and Lambda.Automated Reporting: Generates and emails a professional HTML energy audit report to the user’s Gmail.TNEB Billing Engine: Accurate bi-monthly billing simulation based on current Tamil Nadu power slabs.Edge Visualization: Real-time bar charts for instant power and financial analysis.🛠️ Technical StackLanguage: Python 3.xCloud: AWS (Lambda, DynamoDB, API Gateway)Sensing: Smartphone Magnetometer (via IP Sensor App)Libraries: NumPy, Matplotlib, Requests, SMTPLibDatabase: DynamoDB (Cloud) & CSV (Local Edge)📂 Repository StructurePlaintext├── main_audit_system.py    # The core NILM & Cloud synchronization script
-├── aws_lambda_handler.py   # Backend logic for AWS data processing
-├── user_data_logs/         # Local CSV repository for offline storage
-└── README.md               # Project documentation
-🔧 How It WorksCalibration: The system takes 20 samples of the ambient magnetic field to establish a baseline.Sensing: When the appliance is turned on, the change in magnetic flux ($\Delta \mu T$) is captured.DSP & Physics: We apply the formula $I = \frac{B \cdot 2\pi r}{\mu_0}$ to derive the current and power.Cloud Sync: The data is pushed to the AWS ecosystem for long-term monitoring.User Alert: A detailed HTML report is fired to the user's registered email.👨‍🔬 AuthorPraneshFinal Year Electrical and Electronics Engineering (EEE) Student
+# ⚡ NILM Smart Billing System
+
+### *IoT-based Energy Auditing using Smartphone Magnetometers*
+
+## 📌 How it Works
+1. **Sensing:** Uses the smartphone magnetometer as a non-contact current probe.
+2. **Analysis:** Python processes the magnetic delta into real-time Wattage.
+3. **Cloud:** Data is synced to **AWS DynamoDB** via **API Gateway**.
+4. **Billing:** Calculates monthly costs based on **TNEB** domestic tariff slabs.
+
+## 🛠️ Tech Stack
+* **Language:** Python
+* **Cloud:** AWS (Lambda, DynamoDB, API Gateway)
+* **Hardware:** Smartphone Hall Effect Sensor
